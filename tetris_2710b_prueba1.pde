@@ -6,6 +6,13 @@ int[][] cell = new int[10][20];
 int puntaje;
 int time_min, time, time_last; // Variables de tiempo
 
+int pieza_x, pieza_y; // Variables para la creacion de pieza en ejes
+
+
+int select_piece;
+
+int t = 0;
+
 boolean primer_inicio = true;
 
 void setup() {
@@ -18,10 +25,10 @@ void setup() {
   PFont tetr;
   tetr = createFont("Tetris.ttf", 128);
   textFont(tetr);
+  frameRate(3);
 }
 
 void draw() {
-  
   /* TIEMPO */
     time = (millis()/1000)-time_last;
   if(time >= 60){
@@ -39,7 +46,69 @@ void draw() {
 }
 
 void pieza(){
-  
+  switch(select_piece){
+    case 1: // cuadrado
+    square.setFill(color(0,255,0));
+        shape(square,350,50);
+        shape(square,400,50);
+        shape(square,350,100);
+        shape(square,400,100);
+        println("Cuadrado");
+      break;
+     case 2: // L
+     square.setFill(color(0,255,0));
+        shape(square,350,50);
+        shape(square,350,100);
+        shape(square,350,150);
+        shape(square,400,150);
+        println("L");
+      break;
+     case 3: // T invertida
+     square.setFill(color(0,255,0));
+        shape(square,350,50);
+        shape(square,350,100);
+        shape(square,300,100);
+        shape(square,400,100);
+        println("T inver");
+      break;
+     case 4: // Z
+     square.setFill(color(0,255,0));
+        shape(square,300,50);
+        shape(square,350,50);
+        shape(square,350,100);
+        shape(square,400,100);
+        println("Z");
+      break;
+     case 5: // |
+     square.setFill(color(0,255,0));
+        shape(square,300,50);
+        shape(square,300,100);
+        shape(square,300,150);
+        shape(square,300,200);
+        println("Palito");
+      break;
+     case 6: // L INVERTIDA
+     square.setFill(color(0,255,0));
+        shape(square,350,50);
+        shape(square,350,100);
+        shape(square,350,150);
+        shape(square,300,150);
+        println("L inver");
+      break;
+     case 7: // Z INVERTIDA
+     square.setFill(color(0,255,0));
+        shape(square,300,100);
+        shape(square,350,100);
+        shape(square,350,50);
+        shape(square,400,50);
+        println("Z inver");
+      break;
+  }
+}
+
+void mouseClicked(){
+  primer_inicio = true;
+  select_piece = int(random(1,7));
 }
 
 /*
@@ -52,6 +121,7 @@ void crear_celdas(){
     temp_x = temp_x+50;
     for(int y=0;y<20;y++){
       temp_y = y*50;
+      square.setFill(color(0, 0, 255));
       shape(square, temp_x, temp_y);
       agregar_celda_array(x, y);
     }
@@ -81,20 +151,3 @@ void textos(){
   text(":", 725, 180);
   text(time, 740, 180);
 }
-
-/*
-PRUEBAS
-*/
-
-void mousePressed(){
-
-  for(int y = 0; y<10; y++){
-    int a = cell[0][y];
-    print(a);
-  }
-}
-
-/* 
-translate(logitud*2, altura*tiempo);0
-rotate();
-*/
