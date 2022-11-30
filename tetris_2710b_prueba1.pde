@@ -53,7 +53,6 @@ void pieza(){
         shape(square,400,50);
         shape(square,350,100);
         shape(square,400,100);
-        println("Cuadrado");
       break;
      case 2: // L
      square.setFill(color(0,255,0));
@@ -61,7 +60,6 @@ void pieza(){
         shape(square,350,100);
         shape(square,350,150);
         shape(square,400,150);
-        println("L");
       break;
      case 3: // T invertida
      square.setFill(color(0,255,0));
@@ -69,7 +67,6 @@ void pieza(){
         shape(square,350,100);
         shape(square,300,100);
         shape(square,400,100);
-        println("T inver");
       break;
      case 4: // Z
      square.setFill(color(0,255,0));
@@ -77,7 +74,6 @@ void pieza(){
         shape(square,350,50);
         shape(square,350,100);
         shape(square,400,100);
-        println("Z");
       break;
      case 5: // |
      square.setFill(color(0,255,0));
@@ -85,7 +81,6 @@ void pieza(){
         shape(square,300,100);
         shape(square,300,150);
         shape(square,300,200);
-        println("Palito");
       break;
      case 6: // L INVERTIDA
      square.setFill(color(0,255,0));
@@ -93,7 +88,6 @@ void pieza(){
         shape(square,350,100);
         shape(square,350,150);
         shape(square,300,150);
-        println("L inver");
       break;
      case 7: // Z INVERTIDA
      square.setFill(color(0,255,0));
@@ -101,7 +95,6 @@ void pieza(){
         shape(square,350,100);
         shape(square,350,50);
         shape(square,400,50);
-        println("Z inver");
       break;
   }
 }
